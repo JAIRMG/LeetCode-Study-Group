@@ -30,15 +30,16 @@ import UIKit
  
  */
 
-//Runtime: 416 ms, faster than 6.82% of Swift online submissions for Decode XORed Array.
-//Memory Usage: 15.5 MB, less than 32.95% of Swift online submissions for Decode XORed Array.
+//Runtime: 320 ms, faster than 17.05% of Swift online submissions for Decode XORed Array.
+//Memory Usage: 15.5 MB, less than 20.45% of Swift online submissions for Decode XORed Array.
+
 
 func decode(_ encoded: [Int], _ first: Int) -> [Int] {
     var result = [Int]()
     result.append(first)
 
-    for num in encoded {
-        result.append(num ^ result.last!)
+    for index in 0 ..< encoded.count {
+        result.append(encoded[index] ^ result[index])
     }
     return result
 }
