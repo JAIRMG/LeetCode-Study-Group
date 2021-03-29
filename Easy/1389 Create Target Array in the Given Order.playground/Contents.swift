@@ -34,20 +34,11 @@ import UIKit
 func createTargetArray(_ nums: [Int], _ index: [Int]) -> [Int] {
     var result = [Int]()
     
-    for i in 0 ..< nums.count {
-        if result.isEmpty {
-            result.append(nums[i])
-            continue
-        }
-        
-        if index[i] >= result.count {
-            result.append(nums[i])
-            
-        } else {
-            result.insert(nums[i], at: index[i])
-        }
-        
-        
+    for i in 0..<nums.count {
+        let value = nums[i]
+        let pos = index[i]
+        result.insert(value, at: pos)
     }
+    
     return result
 }
