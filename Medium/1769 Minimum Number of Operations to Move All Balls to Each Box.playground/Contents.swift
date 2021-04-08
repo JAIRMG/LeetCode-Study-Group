@@ -63,3 +63,24 @@ func minOperations(_ boxes: String) -> [Int] {
 }
 
 minOperations("001011") // -> [11,8,5,4,3,4]
+
+func minOperationsB(_ boxes: String) -> [Int] {
+       let ones = findOnes(from: Array(boxes))
+       var result = [Int](repeating: 0, count: boxes.count)
+       for i in 0..<boxes.count {
+          for j in 0..<ones.count {
+               let value = ones[j]
+               result[i] += abs(i - value)
+           }
+       }
+       return result  
+   }
+func findOnes(from array: [Character]) -> [Int] {
+    var result = [Int]()
+    for i in 0..<array.count {
+        if array[i] == "1" {
+            result.append(i)
+        }
+    }
+    return result
+}
