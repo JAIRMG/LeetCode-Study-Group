@@ -71,5 +71,14 @@ func busyStudent(_ startTime: [Int], _ endTime: [Int], _ queryTime: Int) -> Int 
 
     return busyMaybe
 }
-
+func busyStudent(_ startTime: [Int], _ endTime: [Int], _ queryTime: Int) -> Int {
+    var result = 0
+    for i in 0..<startTime.count {
+      let range = startTime[i]...endTime[i]
+          if range.contains(queryTime) {
+              result += 1
+          }
+      }
+    return result
+}
 busyStudent([9,8,7,6,5,4,3,2,1], [10,10,10,10,10,10,10,10,10], 5) // -> 5
