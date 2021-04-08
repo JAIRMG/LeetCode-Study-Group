@@ -51,4 +51,13 @@ func minPartitions(_ n: String) -> Int {
 minPartitions("82734") // -> 8
 
 minPartitions("32") // -> 3
-
+func minPartitionsB(_ n: String) -> Int {
+      var max = 9
+      while max > 0 {
+          if n.contains(String(max)) {
+              return max
+          }
+         max -= 1
+     }
+    return max
+}
